@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+#Inherit ReOS common configuration
+$(call inherit-product-if-exists, vendor/re/main.mk)
+
 # Sample: This is where we'd set a backup provider if we had one
 # $(call inherit-product, device/sample/products/backup_overlay.mk)
 
@@ -24,10 +27,10 @@ PRODUCT_COPY_FILES := device/huawei/angler/apns-full-conf.xml:system/etc/apns-co
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-PRODUCT_NAME := aosp_angler
+PRODUCT_NAME := re_angler
 PRODUCT_DEVICE := angler
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := AOSP on angler
+PRODUCT_MODEL := Nexus 6P
 PRODUCT_MANUFACTURER := Huawei
 PRODUCT_RESTRICT_VENDOR_FILES := true
 
